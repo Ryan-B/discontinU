@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>discontinÜ</title>
+  	
+       
+	<script type="text/javascript" src="/js/lib/angular.js"></script>
+	<script type="text/javascript" src="/js/lib/angular-routes.js"></script>
+	<script type="text/javascript" src="/js/modules.js"></script>
+  	<script type="text/javascript" src="/js/factories.factory.js"></script>
+  	<script type="text/javascript" src="/js/controllers.ctrl.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery.timer.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Oregano:400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Princess+Sofia' rel='stylesheet' type='text/css'>
+	
+	
+</head>
+<header>
+	<h1>discontinÜ</h1>
+</header>
+<body ng-controller="ProductsController as productsCtrl">
+
+	<!-- <div id="stats" ng-view></div> -->
+	<div id="form">
+		<input ng-model="productsCtrl.newProduct.company_name" require placeholder="company">
+		<input ng-model="productsCtrl.newProduct.product_name" require placeholder="product name">
+		<input ng-model="productsCtrl.newProduct.ufc_code" require placeholder="ufc code">
+		
+		<button ng-click="productsCtrl.addProduct(productsCtrl.newProduct)">Add Item</button>
+	</div>
+	<ul>
+		<li ng-repeat="product in productsCtrl.products">
+			<p ng-bind="product.company_name"></p>
+			<p ng-bind="product.product_name"></p>		
+			<p ng-bind="product.ufc_code"></p>
+			<button ng-click="productsCtrl.removeProduct(product)">Remove</button>
+			<button ng-click="productsCtrl.editProduct(product)">Edit</button>
+		</li>
+	</ul>
+
+</body>
+</html>
+
+<style>
+	*{
+		/*border: 1px dotted purple;*/
+	}
+	body{
+		background-image: url('lipsticks.jpg');
+
+    	background-repeat: no-repeat;
+   
+    	background-size: cover;
+	}
+
+	h1{
+		font-family: 'Princess Sofia', cursive;
+		font-size: 60pt;
+		color: black;
+		text-align: right;
+		margin-top: 5px;
+		margin-right: 20px; 
+	}
+	form{
+		margin-left: 30%;
+	}
+	#submit{
+		margin-left: 20%;
+	}
+	#form{
+		margin: 0 auto;
+		width: 50%;
+	}
+	li{
+		display: inline;
+	}
+
+</style>

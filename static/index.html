@@ -51,14 +51,14 @@
 			<th>Product</th>
 			<th>UFC Code</th>
 			<th>Remove</th>
-			<th>Edit</th>
+			
 		<tr>
 		<tr ng-repeat="product in productsCtrl.products">
-			<td ng-bind="product.company_name"></td>
-			<td ng-bind="product.product_name"></td>		
-			<td ng-bind="product.ufc_code"></td>
-			<td><button class="btn btn-default" ng-click="productsCtrl.removeProduct(product)">Remove</button></td>
-			<td><button class="btn btn-default" ng-click="productsCtrl.editProduct(product)">Edit</button></td>
+			<p class="p_td"><td ng-bind="product.company_name"></td></p>
+			<p class="p_td"><td ng-bind="product.product_name"></td></p>		
+			<p class="p_td"><td ng-bind="product.ufc_code"></td></p>
+			<p class="p_td"><td><button class="btn btn-danger" ng-click="productsCtrl.removeProduct(product)">Remove</button></td></p>
+			<!-- <td><button class="btn btn-default" ng-click="productsCtrl.editProduct(product)">Edit</button></td> -->
 		</tr>
 		
 	</table>
@@ -107,12 +107,20 @@
 	}
 */
 	td{
-		color:black;
-		font-weight: 800;
+		
+		
+		background-color: white;
+		opacity: .7;
+		font-weight: 600;
 
+	}
+	th{
+		background-color: white;
+		opacity: .8;
 	}
 	td button{
 		color: black;
+		opacity: 1;
 	}
 		
 		
